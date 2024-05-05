@@ -1,4 +1,4 @@
-from src.interface import InterfaceDoUsuario
+from interface import InterfaceDoUsuario
 
 class Usuario(InterfaceDoUsuario):
     def __init__(self, nome, email, telefone):
@@ -30,29 +30,23 @@ class Usuario(InterfaceDoUsuario):
     def set_telefone(self, telefone):
         self.__telefone = telefone
     
-    def cadastrar(self):
-        pass
-    
     def logar(self):
         pass
     
     def deslogar(self):
         pass
     
-    def excluir_conta(self):
-        pass
-    
     def __str__(self) -> str:
-        print(f"""
-              Usuário: {self.get_nome}\n
-              ===============================\n
-              \tEmail: {self.get_email}\n
-              \tTelefone: {self.get_telefone}\n
-              """)
+        return f"""
+Usuário: {self.get_nome}
+===============================
+Email:\t\t{self.get_email}
+Telefone:\t{self.get_telefone}
+              """
     
     def __del__(self):
         print(f"Desligando usuário {self.get_nome}")
 
 
-usuar = Usuario("Matheus", "maat02garcia@gmail.com", "42 999549658")
+usuar = Usuario("Matheus", "exemple@gmail.com", "42 99999-9999")
 print(usuar)

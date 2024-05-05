@@ -2,3 +2,5 @@ venv
 .vscode
 db.py
 users.db
+*__pycache__
+
