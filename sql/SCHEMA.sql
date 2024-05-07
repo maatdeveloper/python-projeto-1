@@ -3,5 +3,6 @@ CREATE TABLE users(
     id INTEGER PRIMARY KEY AUTOINCREMET,
     nome TEXT,
     email TEXT,
-    telefone TEXT
+    telefone TEXT,
+    data_criacao INTEGER
 )

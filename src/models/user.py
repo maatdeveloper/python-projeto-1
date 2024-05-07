@@ -1,3 +1,4 @@
+from datetime import datetime as dt
 from interface import InterfaceDoUsuario
 
 class Usuario(InterfaceDoUsuario):
@@ -5,6 +6,7 @@ class Usuario(InterfaceDoUsuario):
         self.__nome = nome
         self.__email = email
         self.__telefone = telefone
+        self.data_criacao = dt.now().strftime("%d/%m/%Y")
         
     @property
     def get_nome(self):
@@ -29,19 +31,14 @@ class Usuario(InterfaceDoUsuario):
     @get_telefone.setter
     def set_telefone(self, telefone):
         self.__telefone = telefone
-    
-    def logar(self):
-        pass
-    
-    def deslogar(self):
-        pass
-    
+     
     def __str__(self) -> str:
         return f"""
 Usuário: {self.get_nome}
 ===============================
 Email:\t\t{self.get_email}
 Telefone:\t{self.get_telefone}
+Data Criação:\t{self.data_criacao}
               """
     
     def __del__(self):
