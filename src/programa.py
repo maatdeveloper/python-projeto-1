@@ -1,3 +1,5 @@
+from models.user import Usuario
+
 def menu(nome=""):
     if nome:
         print("*"*50)
@@ -39,3 +41,7 @@ def elefante():
        ██▓██   ██▓▓██
           """)
     
+
+def cadastro(nome, email, telefone):
+    user = Usuario(nome, email, telefone)
+    return user

@@ -1,13 +1,21 @@
 from datetime import datetime as dt
 from interface import InterfaceDoUsuario
+import sqlite3
 
+conn = sqlite3.connect("user.db")
+cursor = conn.cursor()
 class Usuario(InterfaceDoUsuario):
     def __init__(self, nome, email, telefone):
         self.__nome = nome
         self.__email = email
         self.__telefone = telefone
-        self.data_criacao = dt.now().strftime("%d/%m/%Y")
+        self.__data_criacao = dt.now().strftime("%d/%m/%Y")
         
+        cursor.execute("INSERT INTO users VALUES (?, ?, ?, ?)", (self.__nome, self.__email, self.__telefone, self.__data_criacao))
+        conn.commit()
+        cursor.close()
+        conn.close()
+    
     @property
     def get_nome(self):
         return self.__nome

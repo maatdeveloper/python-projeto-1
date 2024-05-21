@@ -2,13 +2,15 @@ import sys
 import os
 from src.programa import *
 
+args = sys.argv[1:]
+
 while True:
     menu()
     escolha = input("").lower()[0]
     
     match escolha:
         case "c":
-            pass
+            user = cadastro(args[1], args[2], args[3])
         
         case "l":
             pass
